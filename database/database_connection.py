@@ -5,7 +5,18 @@ from fastapi import FastAPI
 
 
 class Database:
-    def __init__(self, db_url: str = None, host: str = None, port: str = None, user: str = None, password: str = None, database: str = None, engine: str = None):
+    """
+    Database object
+    """
+    def __init__(self, 
+                 db_url: str = None, 
+                 host: str = None, 
+                 port: str = None, 
+                 user: str = None, 
+                 password: str = None, 
+                 database: str = None, 
+                 engine: str = None
+                 ):
         """
         Setting up and creating Database connection config
         """
