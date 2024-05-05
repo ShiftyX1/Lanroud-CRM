@@ -1,6 +1,7 @@
 {% extends "base.jinja2" %}
 
 {% block title %}<title>Дашборд - Lanroud CRM</title>{% endblock title %}
+
 {% block style %}
 <style>
     #navbar {
@@ -11,3 +12,32 @@
     }
 </style>
 {% endblock style %}
+
+{% block div_imgbox %}{% endblock div_imgbox %}
+
+{% block div_end_imgbox %}{% endblock div_end_imgbox %}
+
+{% block bg_img %}{% endblock bg_img %}
+
+{% block content %}
+<div class="container" style="color: aliceblue;">
+  <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+  <div class="row">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div>
+
+  <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+  <div class="row">
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div>
+
+  <!-- Columns are always 50% wide, on mobile and desktop -->
+  <div class="row">
+    <div class="col-6">.col-6</div>
+    <div class="col-6">.col-6</div>
+  </div>
+</div>
+{% endblock content %}
