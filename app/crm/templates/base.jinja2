@@ -8,11 +8,22 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.js" integrity="sha384-qbtR4rS9RrUMECUWDWM2+YGgN3U4V4ZncZ0BvUcg9FGct0jqXz3PUdVpU1p0yrXS" crossorigin="anonymous"></script>
+    {% block style %}
+    <style>
+    #navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    </style>
+    {% endblock style %}
 </head>
-<body>
-    <nav class="flex justify-between text 3xl" style="background-color: #50c878; color: rgb(49, 41, 41)">
+<body style="background-color: rgb(27, 22, 22)">
+<div class="imgbox">
+    <nav id="navbar" class="flex justify-between text 3xl" style="background-color: #50c878; color: rgb(49, 41, 41)">
         <ul class="flex ml-10 gap-10">
-            <li><a href="/"><img src="{{ url_for('img', path='default/logo.png') }}" width="200"/></a></li>
+            <li><a href="/"><img src="{{ url_for('img', path='default/logo.png') }}" width="100"/></a></li>
             {% block navigation %}
             {% endblock navigation %}
         </ul>
@@ -21,6 +32,8 @@
             <li>Выход</li>
         </ul>
     </nav>
+<img class="center-fit" src="{{ url_for('img', path='default/31812.jpg') }}" width="100%" height="100%">
+</div>
 {% block content %}
 {% endblock content %}
 </body>

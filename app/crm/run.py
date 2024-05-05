@@ -5,6 +5,7 @@ from app.config.config import settings
 
 #------IMPORT ROUTERS HERE--------
 from app.crm.routers.auth import auth_router
+from app.crm.routers.dashboard import dashboard_router
 #---------------------------------
 
 from database import database
@@ -29,6 +30,7 @@ def start_application(routers: list):
 
 routers = [
     {"router": auth_router, "prefix": "/auth", "tags": ["Authentication Module"]},
+    {"router": dashboard_router, "prefix": "/dashboard", "tags": ["Dashboard Module"]},
 ]
 
 crm = start_application(routers=routers)

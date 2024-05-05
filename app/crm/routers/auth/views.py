@@ -9,4 +9,4 @@ templates = Jinja2Templates(directory='app/crm/templates/')
 
 @views_router.get('/')
 def auth_page(request: Request):
-    return templates.TemplateResponse(request=request, name='default/auth.jinja2')
+    return templates.TemplateResponse(request=request, name='default/auth/auth.jinja2')
