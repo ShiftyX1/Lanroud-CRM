@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from app.config.config import settings
 
 #------IMPORT ROUTERS HERE--------
-from app.crm.routers.auth.views import auth_router
+from app.crm.routers.auth import auth_router
 #---------------------------------
 
 from database import database
@@ -20,7 +20,7 @@ def start_application(routers: list):
         print("No routers included!")
     
     for router_elem in routers:
-        app.include_router(router=router_elem["router"], prefix=router_elem["prefix"])
+        app.include_router(router=router_elem["router"], prefix=router_elem["prefix"], tags=router_elem["tags"])
 
     app.mount("/css", StaticFiles(directory="app/crm/static/css"), name="css")
     app.mount("/script", StaticFiles(directory="app/crm/static/script"), name="script")
@@ -28,7 +28,7 @@ def start_application(routers: list):
     return app
 
 routers = [
-    {"router": auth_router, "prefix": ""},
+    {"router": auth_router, "prefix": "/auth", "tags": ["Authentication Module"]},
 ]
 
 crm = start_application(routers=routers)
